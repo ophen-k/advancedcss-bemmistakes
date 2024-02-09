@@ -61,7 +61,7 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
     }
 
 ## Example 3
-    .Newcard {
+    .card__new {
       border: solid 1px rgb(255, 242, 0);
       border-width: 2rem;
       max-width: 260px;
@@ -76,15 +76,15 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
 ## Example 5
 > [!TIP]
 > What is a purpose of section? does it make sense to call it "card"?
-
+    
 > [!TIP]
 > There are more mistakes to fix here :)
 
-    <section class="card">
-        <article class="card article__dog">
-            <aside class="article__dog aside">
-                <figure class="article__dog figure">
-                    <img src="..." alt="Dummy Image" class="" />
+    <section class="section">
+        <article class="article__dog">
+            <aside class="aside__dog aside">
+                <figure class="figure__dog figure">
+                    <img src="..." alt="Dummy Image" class="img__dog" />
                 </figure>
              </aside>
          </article>
@@ -96,12 +96,12 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
     }
 
 ## Example 7
-    <article class="card cat--card">
+    <article class="card__cat">
       ...
     </article>
 
 ## Example 8
-    <article class="card card--dog card--dog--type1">
+    <article class="card card__dog card__dog--type1">
       ...
     </article>
 
@@ -109,10 +109,6 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
     .card {
         border: solid 1px #000;
         max-width: 360px;
-        padding: 20px;
-    }
-  
-    .card {
         background-color: white;
         margin-bottom: 20px;
         padding: 15px;
@@ -135,12 +131,12 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
     }
 
 ## Example 11
-    <main class="main__flex-wrap">
+    <main class="main__flex">
         ...
     </main>
 > [!TIP]
 > Why is it not a good idea to specify type of flex applied to element in the name of class?
-
+    - Because it's a waste of space to specify the type
     
 ## Example 12
     <section class="dog--flex">
@@ -149,7 +145,7 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
 
 ## Example 13
     <footer class="card__options">
-      <div class="card__options-buttons">
+      <div class="card__options--container">
        ...
       </div>
     </footer>
@@ -163,7 +159,7 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
 ## Example 15
     <header class="card__header">
         <h2 class="card__title--cat">NEW! Cat Poster</h2>
-        <h3 class="card__subtitle">Cat poster - 50nok</h3>
+        <h3 class="card__subtitle--cat">Cat poster - 50nok</h3>
     </header>
 
 ## Example 16
@@ -172,9 +168,9 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
     </section>
 
 ## Example 17
-    <button class="card_basked_button styled disabled">
-        <span class="card_basket_button_icon">&#128722;</span>
-        <span class="card_basket_button_text">Basket</span>
+    <button class="basket__button styled disabled">
+        <span class="basket__button--icon">&#128722;</span>
+        <span class="basket__button--text">Basket</span>
     </button>
 
 ## Example 18
@@ -197,6 +193,9 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
 > Why it is not a good idea to style cards based on `nth-of-type(even)` in context of shopping cards?
 > In which context it will be a good idea?
 
+> The css can easily break if it only looks for even numbers and it isn't future proof in case the layout will be improved further.
+> I'm not sure where a even number selector would be useful.
+
     .card:nth-of-type(even) .card_basked_button {
         ...
     }
@@ -211,7 +210,7 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
     }
 
 ## Example 21
-    <main class="main_flex-container">
+    <main class="main__flex">
         ...
     </main>
 
@@ -225,10 +224,11 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
 
 ## Example 23
 > [!TIP]
-> Let's assume that in some case it make sense to call a section "cat" or "dog", the section "cat" will consist of multiple cards of cats, and the section "dog" will consist of multiple cards of dogs. Let's not focuse here on BEM. Nevertheless, how could you improve on class naming?
-> 
+> Let's assume that in some case it make sense to call a section "cat" or "dog", the section "cat" will consist of multiple cards of cats, and the section "dog" will consist of multiple cards of dogs. Let's not focus here on BEM. Nevertheless, how could you improve on class naming?
 
-    <section class="cat">
+> I don't know what to do here
+
+    <section class="section__cats">
         ...
     </section>
 
@@ -263,3 +263,5 @@ In addition to the above BEM exercise, in your group, practice Git collaboration
 
 ## Example 27
 In what scenarios is it advantageous to use a class name that represents the animal, and in what scenarios would it be preferable to use a generic name like 'product_01' or 'product_02'?
+
+> If the product catalogue is too big there's no point in naming everything, but if it's a smaller catalogue you can do specific styles for each animal.
